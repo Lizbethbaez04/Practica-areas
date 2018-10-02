@@ -33,10 +33,7 @@ namespace PracticaArea
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            /*float baset = float.Parse(base2.Text);
-            float alturat = float.Parse(altura2.Text);
-            float areatotal2 = (baset * alturat) / 2;
-            area2.Text = areatotal2.ToString();*/
+            /**/
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -49,11 +46,7 @@ namespace PracticaArea
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            /*float alturatr = float.Parse(altura3.Text);
-            float basemayortr = float.Parse(basemayor.Text);
-            float basemenortr = float.Parse(basemenor.Text);
-            float areatotal4 = alturatr * ((basemayortr + basemenortr) / 2);
-            area4.Text = areatotal4.ToString();*/
+            /**/
         }
 
         private void cbTipoFigura_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -85,19 +78,36 @@ namespace PracticaArea
             {
                 case 0: //Rectangulo
                     var ControlAreaRectangulo = (ControlAreaRectangulo)panelConfiguracion.Children[0];
+
                     float baser = float.Parse(ControlAreaRectangulo.base1.Text);
                     float alturar = float.Parse(ControlAreaRectangulo.altura1.Text);
                     area = baser * alturar;
                     break;
+
                 case 1: //Triangulo
+                    var ControlAreaTriangulo = (ControlAreaTriangulo)panelConfiguracion.Children[0];
+
+                    float baset = float.Parse(ControlAreaTriangulo.base2.Text);
+                    float alturat = float.Parse(ControlAreaTriangulo.altura2.Text);
+                    area = (baset * alturat) / 2;
                     break;
+
                 case 2: //Circulo
                     var ControlAreaCirculo = (ControlAreaCirculo)panelConfiguracion.Children[0];
+
                     float radio = float.Parse(ControlAreaCirculo.radio.Text);
                     area = 3.14159f * radio * radio;
                     break;
+
                 case 3://Trapecio
+                    var ControlAreaTrapecio = (ControlAreaTrapecio)panelConfiguracion.Children[0];
+
+                    float alturatr = float.Parse(ControlAreaTrapecio.altura3.Text);
+                    float basemayortr = float.Parse(ControlAreaTrapecio.basemayor.Text);
+                    float basemenortr = float.Parse(ControlAreaTrapecio.basemenor.Text);
+                    area = alturatr * ((basemayortr + basemenortr) / 2);
                     break;
+
                 default:
                     break;
             }
